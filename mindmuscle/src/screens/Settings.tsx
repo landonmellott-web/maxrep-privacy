@@ -5,6 +5,7 @@ import { useApp } from '../context/AppContext'
 import { supabase } from '../lib/supabase'
 import { openCustomerPortal } from '../lib/stripe'
 import { getProfile } from '../lib/motivatorProfiles'
+import { requestPushPermission, hasPushPermission } from '../lib/notifications'
 import GoldButton from '../components/GoldButton'
 
 const HOURS = Array.from({ length: 19 }, (_, i) => {
@@ -21,7 +22,7 @@ export default function Settings() {
   const [editingName, setEditingName] = useState(false)
   const [savingName, setSavingName] = useState(false)
   const [savingTime, setSavingTime] = useState(false)
-  const [notifPerm, setNotifPerm] = useState<NotificationPermission>('default')
+  const [notifGranted, setNotifGranted] = useState(false)
   const [requestingNotif, setRequestingNotif] = useState(false)
   const [openingPortal, setOpeningPortal] = useState(false)
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false)
@@ -29,7 +30,7 @@ export default function Settings() {
   const [showRetakeConfirm, setShowRetakeConfirm] = useState(false)
 
   useEffect(() => {
-    if ('Notification' in window) setNotifPerm(Notification.permission)
+    hasPushPermission().then(setNotifGranted)
   }, [])
 
   useEffect(() => {
@@ -55,18 +56,10 @@ export default function Settings() {
   }
 
   const requestNotifications = async () => {
-    if (!('Notification' in window)) return
+    if (!user) return
     setRequestingNotif(true)
-    const perm = await Notification.requestPermission()
-    setNotifPerm(perm)
-    if (perm === 'granted' && 'serviceWorker' in navigator) {
-      try {
-        const reg = await navigator.serviceWorker.register('/sw.js')
-        console.log('[SW] registered', reg.scope)
-      } catch (e) {
-        console.error('[SW] registration failed', e)
-      }
-    }
+    await requestPushPermission(user.id)
+    setNotifGranted(await hasPushPermission())
     setRequestingNotif(false)
   }
 
@@ -212,11 +205,11 @@ export default function Settings() {
           <div style={rowStyle}>
             <div>
               <span style={labelStyle}>Permission</span>
-              <div style={{ color: notifPerm === 'granted' ? '#E8A33D' : '#8B8B92', fontSize: 14, fontWeight: 600 }}>
-                {notifPerm === 'granted' ? '✓ Enabled' : notifPerm === 'denied' ? '✗ Blocked in browser' : 'Not enabled'}
+              <div style={{ color: notifGranted ? '#E8A33D' : '#8B8B92', fontSize: 14, fontWeight: 600 }}>
+                {notifGranted ? '✓ Enabled' : 'Not enabled'}
               </div>
             </div>
-            {notifPerm !== 'granted' && notifPerm !== 'denied' && (
+            {!notifGranted && (
               <button onClick={requestNotifications} disabled={requestingNotif} style={{ background: 'linear-gradient(135deg,#E8A33D,#C8872A)', border: 'none', borderRadius: 10, padding: '8px 14px', cursor: 'pointer', color: '#0A0A0B', fontSize: 13, fontWeight: 700, display: 'flex', alignItems: 'center', gap: 4 }}>
                 <Bell size={14} /> {requestingNotif ? 'Enabling…' : 'Enable'}
               </button>

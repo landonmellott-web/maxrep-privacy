@@ -154,8 +154,10 @@ create table if not exists push_subscriptions (
   id              uuid primary key default uuid_generate_v4(),
   user_id         uuid not null references profiles(id) on delete cascade,
   endpoint        text not null,
-  p256dh          text not null,
-  auth            text not null,
+  p256dh          text not null default '',
+  auth            text not null default '',
+  platform        text not null default 'web'
+    check (platform in ('web', 'ios', 'android')),
   created_at      timestamptz not null default now(),
   unique (user_id, endpoint)
 );
