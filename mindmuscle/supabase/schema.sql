@@ -18,6 +18,7 @@ create table if not exists profiles (
   subscription_status text not null default 'free'
     check (subscription_status in ('free','trialing','active','past_due','canceled')),
   stripe_customer_id text unique,
+  stripe_price_id    text,
   created_at        timestamptz not null default now(),
   updated_at        timestamptz not null default now()
 );
