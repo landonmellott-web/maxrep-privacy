@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HVAC Blog | YETI Heating & Cooling | Dover, PA</title>
+  <meta name="description" content="Straight-talk HVAC tips, seasonal maintenance guides, and industry know-how from YETI Heating & Cooling in Dover, PA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><polygon points='16,2 30,10 30,22 16,30 2,22 2,10' fill='%23e85d04'/><text x='16' y='22' text-anchor='middle' font-size='16' fill='white' font-family='sans-serif'>❄</text></svg>" />
+</head>
+<body>
+
+<div class="page-overlay"></div>
+
+<!-- Nav -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">❄</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">YETI H&amp;C</span>
+          <span class="nav-logo-tagline">Heating &amp; Cooling</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#testimonials">Reviews</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="tel:7179421104" class="nav-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.12 2.18 2 2 0 012.11 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+          717.942.1104
+        </a>
+        <a href="index.html#contact" class="btn btn-primary">Free Estimate
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="index.html#services">Services</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#testimonials">Reviews</a>
+  <a href="blog.html">Blog</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="tel:7179421104" class="mobile-nav-phone">📞 717.942.1104</a>
+</nav>
+
+<!-- Blog Hero -->
+<div class="blog-listing-hero">
+  <div class="container">
+    <div class="section-label" style="justify-content:center;">YETI Know-How</div>
+    <h1 class="section-title" style="font-size:clamp(2.5rem,6vw,5rem);">The <span>YETI Blog</span></h1>
+    <p class="section-subtitle" style="margin:0 auto;text-align:center;">
+      Real talk on HVAC from the field. No filler — just useful tips to keep your home comfortable and your equipment running right.
+    </p>
+
+    <div class="blog-filters">
+      <button class="blog-filter active" data-filter="all">All Posts</button>
+      <button class="blog-filter" data-filter="maintenance">Maintenance</button>
+      <button class="blog-filter" data-filter="cooling">Cooling</button>
+      <button class="blog-filter" data-filter="heating">Heating</button>
+      <button class="blog-filter" data-filter="air-quality">Air Quality</button>
+      <button class="blog-filter" data-filter="tips">Tips &amp; Guides</button>
+    </div>
+  </div>
+</div>
+
+<!-- Blog Grid -->
+<div class="container">
+  <div class="blog-listing-grid">
+
+    <!-- Post 1 - Featured -->
+    <div class="blog-card featured reveal" data-category="tips" onclick="location.href='blog/when-to-replace-hvac.html'" style="cursor:pointer;">
+      <div class="blog-card-img">
+        <div class="blog-card-img-bg" style="background:linear-gradient(135deg,#0f2044,#1a6bb5);min-height:240px;position:relative;">
+          <svg width="100%" height="240" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+            <rect width="600" height="240" fill="#0d1a30"/>
+            <text x="300" y="150" text-anchor="middle" font-size="140" fill="rgba(77,184,232,0.07)">🔧</text>
+          </svg>
+        </div>
+        <span class="blog-card-category">Featured · Tips</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="blog-card-date">May 12, 2026</span>
+          <span class="blog-card-read-time">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            7 min read
+          </span>
+        </div>
+        <h3 class="blog-card-title">7 Signs Your HVAC System Needs to Be Replaced (Not Just Repaired)</h3>
+        <p class="blog-card-excerpt">That old furnace might be costing you more than a new one would. Here's how to know when it's time to stop throwing money at repairs and invest in a replacement — and what to expect when you do.</p>
+        <div class="blog-card-footer">
+          <div class="blog-card-author">
+            <div class="blog-card-author-avatar">YT</div>
+            <span class="blog-card-author-name">YETI Team · Dover, PA</span>
+          </div>
+          <div class="blog-card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 2 -->
+    <div class="blog-card reveal delay-1" data-category="maintenance" onclick="location.href='blog/spring-ac-prep.html'" style="cursor:pointer;">
+      <div class="blog-card-img">
+        <div class="blog-card-img-bg" style="background:linear-gradient(135deg,#0d2a1a,#0f5433);">
+          <svg width="100%" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="200" fill="#0a2218"/>
+            <text x="150" y="120" text-anchor="middle" font-size="100" fill="rgba(74,184,232,0.12)">❄</text>
+          </svg>
+        </div>
+        <span class="blog-card-category">Maintenance</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="blog-card-date">April 28, 2026</span>
+          <span class="blog-card-read-time">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 5 min</span>
+        </div>
+        <h3 class="blog-card-title">Spring AC Prep: 6 Things to Do Before You Turn It On</h3>
+        <p class="blog-card-excerpt">Don't wait for a 95-degree July day to find out your AC isn't working. These six steps take less than an hour and could save you from a miserable summer repair call.</p>
+        <div class="blog-card-footer">
+          <div class="blog-card-author"><div class="blog-card-author-avatar">YT</div><span class="blog-card-author-name">YETI Team</span></div>
+          <div class="blog-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 3 -->
+    <div class="blog-card reveal delay-2" data-category="air-quality" onclick="location.href='blog/air-filters-guide.html'" style="cursor:pointer;">
+      <div class="blog-card-img">
+        <div class="blog-card-img-bg" style="background:linear-gradient(135deg,#1a0a00,#3d1f00);">
+          <svg width="100%" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="200" fill="#180d00"/>
+            <text x="150" y="120" text-anchor="middle" font-size="100" fill="rgba(232,93,4,0.12)">🌬</text>
+          </svg>
+        </div>
+        <span class="blog-card-category">Air Quality</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="blog-card-date">March 15, 2026</span>
+          <span class="blog-card-read-time">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 4 min</span>
+        </div>
+        <h3 class="blog-card-title">Air Filters: What MERV Rating Do You Actually Need?</h3>
+        <p class="blog-card-excerpt">Go too cheap and your system fills with dust. Go too fancy and you'll starve your blower motor. Here's the honest guide to picking the right filter for your home.</p>
+        <div class="blog-card-footer">
+          <div class="blog-card-author"><div class="blog-card-author-avatar">YT</div><span class="blog-card-author-name">YETI Team</span></div>
+          <div class="blog-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 4 -->
+    <div class="blog-card reveal delay-1" data-category="heating" onclick="location.href='blog/furnace-not-heating.html'" style="cursor:pointer;">
+      <div class="blog-card-img">
+        <div class="blog-card-img-bg" style="background:linear-gradient(135deg,#1a0600,#4a1500);">
+          <svg width="100%" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="200" fill="#140400"/>
+            <text x="150" y="120" text-anchor="middle" font-size="100" fill="rgba(232,93,4,0.15)">🔥</text>
+          </svg>
+        </div>
+        <span class="blog-card-category">Heating</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="blog-card-date">January 8, 2026</span>
+          <span class="blog-card-read-time">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 6 min</span>
+        </div>
+        <h3 class="blog-card-title">Furnace Not Heating? Check These 5 Things Before You Call</h3>
+        <p class="blog-card-excerpt">Sometimes the fix is a tripped breaker or a dirty filter. Before you call for service, run through this quick checklist — you might save yourself a service call fee.</p>
+        <div class="blog-card-footer">
+          <div class="blog-card-author"><div class="blog-card-author-avatar">YT</div><span class="blog-card-author-name">YETI Team</span></div>
+          <div class="blog-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 5 -->
+    <div class="blog-card reveal delay-2" data-category="tips" onclick="location.href='blog/heat-pump-vs-furnace.html'" style="cursor:pointer;">
+      <div class="blog-card-img">
+        <div class="blog-card-img-bg" style="background:linear-gradient(135deg,#0f2044,#0b3a5e);">
+          <svg width="100%" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="200" fill="#0a1828"/>
+            <text x="150" y="120" text-anchor="middle" font-size="90" fill="rgba(74,184,232,0.12)">⚡</text>
+          </svg>
+        </div>
+        <span class="blog-card-category">Tips &amp; Guides</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="blog-card-date">November 20, 2025</span>
+          <span class="blog-card-read-time">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 8 min</span>
+        </div>
+        <h3 class="blog-card-title">Heat Pump vs. Gas Furnace: Which Is Right for a PA Home?</h3>
+        <p class="blog-card-excerpt">Pennsylvania winters can be brutal. We break down the real costs, efficiency numbers, and long-term trade-offs of heat pumps versus traditional gas furnaces in our climate.</p>
+        <div class="blog-card-footer">
+          <div class="blog-card-author"><div class="blog-card-author-avatar">YT</div><span class="blog-card-author-name">YETI Team</span></div>
+          <div class="blog-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 6 -->
+    <div class="blog-card reveal delay-3" data-category="cooling" onclick="location.href='blog/ac-short-cycling.html'" style="cursor:pointer;">
+      <div class="blog-card-img">
+        <div class="blog-card-img-bg" style="background:linear-gradient(135deg,#001a2e,#003a5c);">
+          <svg width="100%" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="200" fill="#001018"/>
+            <text x="150" y="120" text-anchor="middle" font-size="100" fill="rgba(74,184,232,0.1)">❄</text>
+          </svg>
+        </div>
+        <span class="blog-card-category">Cooling</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="blog-card-date">August 4, 2025</span>
+          <span class="blog-card-read-time">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 5 min</span>
+        </div>
+        <h3 class="blog-card-title">Why Is My AC Turning On and Off Every Few Minutes?</h3>
+        <p class="blog-card-excerpt">Short-cycling is one of the most common AC complaints we hear — and it has a few specific causes that range from a quick DIY fix to a sign it's time for a new system.</p>
+        <div class="blog-card-footer">
+          <div class="blog-card-author"><div class="blog-card-author-avatar">YT</div><span class="blog-card-author-name">YETI Team</span></div>
+          <div class="blog-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 7 -->
+    <div class="blog-card reveal delay-1" data-category="maintenance" onclick="location.href='blog/annual-tune-up.html'" style="cursor:pointer;">
+      <div class="blog-card-img">
+        <div class="blog-card-img-bg" style="background:linear-gradient(135deg,#1a1200,#3d2b00);">
+          <svg width="100%" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="200" fill="#140e00"/>
+            <text x="150" y="120" text-anchor="middle" font-size="90" fill="rgba(245,158,11,0.12)">🔩</text>
+          </svg>
+        </div>
+        <span class="blog-card-category">Maintenance</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="blog-card-date">September 18, 2025</span>
+          <span class="blog-card-read-time">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 4 min</span>
+        </div>
+        <h3 class="blog-card-title">Is an Annual HVAC Tune-Up Actually Worth It? (Yes. Here's Why.)</h3>
+        <p class="blog-card-excerpt">We know, it sounds like something a company would just say to make money. So we'll break down exactly what gets checked in a tune-up and what it's actually saved our customers over the years.</p>
+        <div class="blog-card-footer">
+          <div class="blog-card-author"><div class="blog-card-author-avatar">YT</div><span class="blog-card-author-name">YETI Team</span></div>
+          <div class="blog-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 8 -->
+    <div class="blog-card reveal delay-2" data-category="air-quality" onclick="location.href='blog/indoor-air-quality.html'" style="cursor:pointer;">
+      <div class="blog-card-img">
+        <div class="blog-card-img-bg" style="background:linear-gradient(135deg,#0a1e0a,#143614);">
+          <svg width="100%" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="200" fill="#081408"/>
+            <text x="150" y="120" text-anchor="middle" font-size="90" fill="rgba(74,184,232,0.1)">🌿</text>
+          </svg>
+        </div>
+        <span class="blog-card-category">Air Quality</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="blog-card-date">October 2, 2025</span>
+          <span class="blog-card-read-time">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 6 min</span>
+        </div>
+        <h3 class="blog-card-title">Indoor Air Is Often More Polluted Than Outdoor Air — Here's What You Can Do</h3>
+        <p class="blog-card-excerpt">The EPA says indoor air can be 2–5x more polluted than outside. For families with allergies, asthma, or young kids, it matters. Here's what actually works and what's just marketing noise.</p>
+        <div class="blog-card-footer">
+          <div class="blog-card-author"><div class="blog-card-author-avatar">YT</div><span class="blog-card-author-name">YETI Team</span></div>
+          <div class="blog-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 9 -->
+    <div class="blog-card reveal delay-3" data-category="tips" onclick="location.href='blog/thermostat-guide.html'" style="cursor:pointer;">
+      <div class="blog-card-img">
+        <div class="blog-card-img-bg" style="background:linear-gradient(135deg,#100020,#240050);">
+          <svg width="100%" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="200" fill="#0a0018"/>
+            <text x="150" y="120" text-anchor="middle" font-size="90" fill="rgba(168,216,240,0.1)">🌡</text>
+          </svg>
+        </div>
+        <span class="blog-card-category">Tips &amp; Guides</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="blog-card-date">July 12, 2025</span>
+          <span class="blog-card-read-time">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 3 min</span>
+        </div>
+        <h3 class="blog-card-title">Smart Thermostat vs. Programmable: Which One Actually Saves Money?</h3>
+        <p class="blog-card-excerpt">Nest, Ecobee, or a $40 programmable? We cut through the hype and tell you exactly which thermostat makes sense for your home and how much you can realistically expect to save.</p>
+        <div class="blog-card-footer">
+          <div class="blog-card-author"><div class="blog-card-author-avatar">YT</div><span class="blog-card-author-name">YETI Team</span></div>
+          <div class="blog-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div style="text-align:center;padding:60px 0 80px;">
+    <div class="section-label" style="justify-content:center;">Need Help?</div>
+    <h2 class="section-title" style="margin-bottom:16px;">Got an HVAC Question?</h2>
+    <p class="section-subtitle" style="margin:0 auto 32px;">Our team is happy to talk through any issue — no sales pressure, just honest advice.</p>
+    <a href="tel:7179421104" class="btn btn-primary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.12 2.18 2 2 0 012.11 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+      Call 717.942.1104
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom" style="padding:32px 0;">
+      <p>&copy; 2026 YETI Heating &amp; Cooling · 4430 West Canal Road, Dover, PA 17315 · <a href="tel:7179421104" style="color:var(--yeti-ice)">717.942.1104</a></p>
+      <div class="footer-bottom-links">
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="floating-cta">
+  <a href="tel:7179421104" class="floating-cta-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.12 2.18 2 2 0 012.11 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+    Call Now
+  </a>
+</div>
+
+<button id="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
