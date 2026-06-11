@@ -1,0 +1,9 @@
+date,client,service,amount,status,notes
+2026-05-01,The Closet Reboot,Digital Marketing Retainer,Existing Client,recurring,Existing client baseline
+2026-05-01,Caliber Roofing and Remodeling,Digital Marketing Retainer,Existing Client,recurring,Existing client baseline
+2026-05-01,Weir Kitchens,Website,Existing Client,recurring,Existing client baseline
+,,,,,
+# GOAL TRACKING
+# month_start_total,2000
+# goal_30_day,6000
+# running_total formula: sum of 'amount' rows where status=closed (numeric only)
