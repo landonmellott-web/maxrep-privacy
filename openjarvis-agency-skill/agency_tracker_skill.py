@@ -15,6 +15,23 @@ Voice commands:
       -> appends a row to leads_prospects.csv
   "what's my revenue progress" / "how much have I made"
       -> reads agency_tracker.csv, sums closed deals, compares to goal
+  "next prospect" / "give me a prospect to call"
+      -> reads next not-contacted row from leads_prospects.csv,
+         reads back the opportunity + implementation steps, and
+         marks it "reviewed today"
+  "mark <name> as contacted"
+      -> updates that prospect's contact_status
+
+Daily prospect checks:
+  Voice cannot browse the web on its own. The intended workflow is:
+    1. Each morning, start a Claude Code session in this repo and run:
+       "research today's batch of app/AI-agent prospects" - Claude searches
+       for new real businesses and appends rows to leads_prospects.csv.
+    2. Then use Jarvis throughout the day with "next prospect" to work
+       through the list hands-free.
+  To automate step 1, set up a scheduled trigger (e.g. cron or the
+  Claude Code "session-start-hook" skill) that kicks off that session
+  every morning.
 """
 
 import csv
@@ -39,8 +56,42 @@ def log_client(name, amount, service):
 def add_lead(name, category, pitch):
     with open(LEADS_PATH, "a", newline="") as f:
         writer = csv.writer(f)
-        writer.writerow([name, category, "manual / Jarvis", "not contacted", "", pitch, "added via Jarvis"])
+        writer.writerow([date.today().isoformat(), name, category, "manual / Jarvis", "not contacted", pitch, "", "", "added via Jarvis"])
     return f"Added lead {name} in category {category}."
+
+
+def _read_leads():
+    with open(LEADS_PATH, newline="") as f:
+        rows = list(csv.reader(f))
+    return rows[0], rows[1:]
+
+
+def _write_leads(header, rows):
+    with open(LEADS_PATH, "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(header)
+        writer.writerows(rows)
+
+
+def next_prospect():
+    header, rows = _read_leads()
+    for row in rows:
+        if len(row) > 4 and row[4] == "not contacted":
+            row[4] = "reviewed"
+            _write_leads(header, rows)
+            name, category, opportunity, steps = row[1], row[2], row[5], row[6]
+            return f"{name} ({category}). Opportunity: {opportunity}. Steps: {steps}"
+    return "No more prospects in the not-contacted queue. Run a research batch to add more."
+
+
+def mark_contacted(name):
+    header, rows = _read_leads()
+    for row in rows:
+        if len(row) > 1 and row[1].strip().lower() == name.strip().lower():
+            row[4] = "contacted"
+            _write_leads(header, rows)
+            return f"Marked {name} as contacted."
+    return f"Couldn't find a prospect named {name}."
 
 
 def revenue_progress():
@@ -72,6 +123,8 @@ INTENTS = {
         m.group(1).strip(), m.group(2).strip(), m.group(3).strip()
     ),
     r"(?:what'?s my revenue progress|how much have i made)": lambda m: revenue_progress(),
+    r"(?:next prospect|give me a prospect(?: to call)?)": lambda m: next_prospect(),
+    r"mark (.+) as contacted": lambda m: mark_contacted(m.group(1).strip()),
 }
 
 
